@@ -4,12 +4,16 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
- * Represents a chest
+ * Represents a (trapped) chest
  */
 public class Chest extends DirectionalContainer {
 
     public Chest() {
-        super(Material.CHEST);
+        this(false);
+    }
+
+    public Chest(boolean isTrapped) {
+        super(isTrapped ? Material.TRAPPED_CHEST : Material.CHEST);
     }
 
     /**
@@ -51,6 +55,10 @@ public class Chest extends DirectionalContainer {
     @Deprecated
     public Chest(final Material type, final byte data) {
         super(type, data);
+    }
+
+    public boolean isTrappedChest() {
+        return this.getItemType() == Material.TRAPPED_CHEST;
     }
 
     @Override
