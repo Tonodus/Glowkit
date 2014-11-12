@@ -77,7 +77,7 @@ public class Button extends SimpleAttachableMaterialData implements Redstone {
             return BlockFace.WEST;
 
         case 0x2:
-            return  BlockFace.EAST;
+            return BlockFace.EAST;
 
         case 0x3:
             return BlockFace.NORTH;
