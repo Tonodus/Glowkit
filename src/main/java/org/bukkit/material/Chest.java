@@ -4,7 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
 
 /**
- * Represents a (trapped) chest
+ * Represents a chest or trapped chest
  */
 public class Chest extends DirectionalContainer {
 
@@ -57,6 +57,11 @@ public class Chest extends DirectionalContainer {
         super(type, data);
     }
 
+    /**
+     * Gets whether this block is a normal chest or a trapped chest.
+     *
+     * @return false if this is a normal chest, true if it is a trapped chest
+     */
     public boolean isTrappedChest() {
         return this.getItemType() == Material.TRAPPED_CHEST;
     }
