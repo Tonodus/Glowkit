@@ -187,7 +187,7 @@ public enum Material {
     IRON_TRAP_DOOR(167, TrapDoor.class),
     PRISMARINE(168, Prismarine.class),
     SEA_LANTERN(169),
-    HAY_BLOCK(170),
+    HAY_BLOCK(170, Hay.class),
     CARPET(171),
     HARD_CLAY(172),
     COAL_BLOCK(173),
