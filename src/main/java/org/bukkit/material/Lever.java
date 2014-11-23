@@ -102,47 +102,76 @@ public class Lever extends SimpleAttachableMaterialData implements Redstone {
         byte data = (byte) (getData() & 0x8);
         BlockFace attach = getAttachedFace();
 
-        if (attach == BlockFace.DOWN) {
-            switch (face) {
-            case SOUTH:
-            case NORTH:
-                data |= 0x5;
-                break;
+        if (face == BlockFace.UP) {
+            switch (attach) {
+                case NORTH:
+                case SOUTH:
+                    data |= 0x5;
+                    break;
 
-            case EAST:
-            case WEST:
-                data |= 0x6;
-                break;
+                case EAST:
+                case WEST:
+                default:
+                    data |= 0x6;
+                    break;
+
             }
-        } else if (attach == BlockFace.UP) {
-            switch (face) {
-            case SOUTH:
-            case NORTH:
-                data |= 0x7;
-                break;
+        } else if (face == BlockFace.DOWN) {
+            switch (attach) {
+                case EAST:
+                case WEST:
+                    data |= 0x0;
+                    break;
 
-            case EAST:
-            case WEST:
-                data |= 0x0;
-                break;
+                case NORTH:
+                case SOUTH:
+                default:
+                    data |= 0x7;
+                    break;
             }
         } else {
-            switch (face) {
-            case EAST:
-                data |= 0x1;
-                break;
+            if (attach == BlockFace.DOWN) {
+                switch (face) {
+                    case SOUTH:
+                    case NORTH:
+                        data |= 0x5;
+                        break;
 
-            case WEST:
-                data |= 0x2;
-                break;
+                    case EAST:
+                    case WEST:
+                        data |= 0x6;
+                        break;
+                }
+            } else if (attach == BlockFace.UP) {
+                switch (face) {
+                    case SOUTH:
+                    case NORTH:
+                        data |= 0x7;
+                        break;
 
-            case SOUTH:
-                data |= 0x3;
-                break;
+                    case EAST:
+                    case WEST:
+                        data |= 0x0;
+                        break;
+                }
+            } else {
+                switch (face) {
+                    case EAST:
+                        data |= 0x1;
+                        break;
 
-            case NORTH:
-                data |= 0x4;
-                break;
+                    case WEST:
+                        data |= 0x2;
+                        break;
+
+                    case SOUTH:
+                        data |= 0x3;
+                        break;
+
+                    case NORTH:
+                        data |= 0x4;
+                        break;
+                }
             }
         }
         setData(data);
