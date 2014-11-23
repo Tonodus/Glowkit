@@ -137,7 +137,7 @@ public enum Material {
     BREWING_STAND(117, MaterialData.class),
     CAULDRON(118, Cauldron.class),
     ENDER_PORTAL(119),
-    ENDER_PORTAL_FRAME(120),
+    ENDER_PORTAL_FRAME(120, EnderPortalFrame.class),
     ENDER_STONE(121),
     DRAGON_EGG(122),
     REDSTONE_LAMP_OFF(123),
