@@ -7,6 +7,9 @@ import org.bukkit.block.BlockFace;
  * Represents a hay block
  */
 public class Hay extends MaterialData implements Directional {
+    /**
+     * @deprecated magic value
+     */
     public Hay(int type) {
         super(type);
     }
@@ -15,10 +18,16 @@ public class Hay extends MaterialData implements Directional {
         super(type);
     }
 
+    /**
+     * @deprecated magic value
+     */
     public Hay(int type, byte data) {
         super(type, data);
     }
 
+    /**
+     * @deprecated magic value
+     */
     public Hay(Material type, byte data) {
         super(type, data);
     }

@@ -92,4 +92,14 @@ public class EnderPortalFrame extends MaterialData implements Directional {
 
         return null;
     }
+
+    @Override
+    public EnderPortalFrame clone() {
+        return (EnderPortalFrame) super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " with" + (hasEye() ? "" : "out") + " eye of ender facing " + getFacing();
+    }
 }
