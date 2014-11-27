@@ -1,7 +1,7 @@
 package org.bukkit.material;
 
-import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
+import org.bukkit.Material;
 
 public class EnderPortalFrame extends MaterialData implements Directional {
     public EnderPortalFrame() {
@@ -59,19 +59,19 @@ public class EnderPortalFrame extends MaterialData implements Directional {
         byte data = (byte) (getData() & 0x4);
 
         switch (face) {
-            case SOUTH:
-                data |= 0x0;
-                break;
-            case WEST:
-                data |= 0x1;
-                break;
-            case NORTH:
-                data |= 0x2;
-                break;
-            case EAST:
-            default:
-                data |= 0x3;
-                break;
+        case SOUTH:
+            data |= 0x0;
+            break;
+        case WEST:
+            data |= 0x1;
+            break;
+        case NORTH:
+            data |= 0x2;
+            break;
+        case EAST:
+        default:
+            data |= 0x3;
+            break;
         }
 
         setData(data);
@@ -80,14 +80,14 @@ public class EnderPortalFrame extends MaterialData implements Directional {
     @Override
     public BlockFace getFacing() {
         switch (getData() & 0x3) {
-            case 0:
-                return BlockFace.SOUTH;
-            case 1:
-                return BlockFace.WEST;
-            case 2:
-                return BlockFace.NORTH;
-            case 3:
-                return BlockFace.EAST;
+        case 0:
+            return BlockFace.SOUTH;
+        case 1:
+            return BlockFace.WEST;
+        case 2:
+            return BlockFace.NORTH;
+        case 3:
+            return BlockFace.EAST;
         }
 
         return null;
