@@ -3,6 +3,9 @@ package org.bukkit.material;
 import org.bukkit.block.BlockFace;
 import org.bukkit.Material;
 
+/**
+ * Represents an EnderPortalFrame
+ */
 public class EnderPortalFrame extends MaterialData implements Directional {
     public EnderPortalFrame() {
         super(Material.ENDER_PORTAL_FRAME);
